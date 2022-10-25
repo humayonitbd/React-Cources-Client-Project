@@ -1,7 +1,11 @@
-import React from 'react'; 
+import React, { useContext, useState } from 'react'; 
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 import './Register.css'
 
 const Register = () => {
+    const {createUser, profileUpdateHandler} = useContext(AuthContext)
+    const [success, setSuccess] = useState('')
 
 
     const registerHandler = (e)=>{
@@ -12,6 +16,34 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name, photoUrl, email, password)
+        if(password.length < 6){
+            alert('Please type 6 charecter !!')
+            return;
+        }if(!/(?=.*[!@#$%*])/.test(password)){
+            alert('Please use of speshall carecter!!')
+            return;
+        }
+
+        createUser(email, password)
+        .then(result=>{
+            const user = result.user;
+            console.log(user)
+            form.reset();
+            handlerProfile(name, photoUrl)
+            setSuccess('Create your account!!')
+        })
+        .catch(error =>console.error(error))
+    }
+
+
+    const handlerProfile =(name, photoUrl)=>{
+        const profile = {
+            displayName: name,
+            photoURL: photoUrl
+        }
+        profileUpdateHandler(profile)
+        .then(result =>{})
+        .then(error =>console.error(error))
     }
 
 
@@ -50,9 +82,11 @@ const Register = () => {
                     </label>
                     <input type="password" name='password' placeholder="password" className="input input-bordered lg:w-80" />
                     </div>
+                    <p className='p-0 m-0 text-green-400'>{success}</p>
                     <div className="form-control mt-6">
                     <button type='submit' className="btn btn-primary">Register</button>
                     </div>
+                    <p>You already registed? <Link className='underline underline-offset-1 text-red-500' to='/login'>login</Link></p>
                 </div>
                 </form>
             </div>

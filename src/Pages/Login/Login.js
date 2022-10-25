@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const loginHandler = (e)=>{
@@ -39,6 +40,7 @@ const Login = () => {
                     <div className="form-control mt-6">
                     <button type='submit' className="btn btn-primary">login</button>
                     </div>
+                    <p>Have you any account? <Link className='underline underline-offset-1 text-red-500' to='/register'>register</Link></p>
                 </div>
                 </form>
             </div>
