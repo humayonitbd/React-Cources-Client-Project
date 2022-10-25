@@ -4,7 +4,7 @@ import './CoursesDetails.css'
 
 const CoursesDetails = () => {
     const coursesDetails = useLoaderData();
-    const {title, category, name, Details, ourcourses, images, parsent, learn, author, others} = coursesDetails;
+    const {title, id, category, name, Details, ourcourses, images, parsent, learn, author, others} = coursesDetails;
     console.log(coursesDetails)
     return (
         <div className='CoursesDetails mb-5'>
@@ -49,7 +49,7 @@ const CoursesDetails = () => {
                     <p className='text-lg'>{ourcourses}</p>
                 </div>
                 <div className="card-actions justify-center py-10">
-                <Link to='/checkOutPage'><button className="btn btn-warning font-bold text-lg">Get premium access</button></Link>
+                <Link to={`/checkOutPage/${id}`}><button className="btn btn-warning font-bold text-lg">Get premium access</button></Link>
                 </div>
                
             </div>

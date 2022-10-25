@@ -1,15 +1,28 @@
 
 import { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Header = () => {
-    const {user} = useContext(AuthContext)
+    const {user, logOutHandler} = useContext(AuthContext)
+
+    const handlerLogoutBtn =()=>{
+        logOutHandler()
+        .then(result =>{
+            toast.success('logout successfull!!')
+        })
+        .catch(error=>console.error(error))
+
+    }
+
+
+
     return (
         <div className='bg-white'>
                 <div className="navbar lg:w-10/12 mx-auto">
                 <div className="flex-1">
-                    <a href='/home' className="text-xl text-black font-bold">Programming Learning{user.displayName}</a>
+                    <a href='/home' className="text-xl text-black font-bold">Programming Learning</a>
                 </div>
                 <div className="flex-none gap-2">
                     <ul className='lg:flex hidden lg:block'>
@@ -18,8 +31,13 @@ const Header = () => {
                         <li className='mr-5 text-black font-bold'><Link to='/faq'>FAQ</Link></li>
                         <li className='mr-5 text-black font-bold'><Link to='/blog'>Blog</Link></li>
                         <input type="checkbox" className="toggle" defaultChecked/>
+                        { user && user.uid ?  <li onClick={handlerLogoutBtn} className='mr-5 text-black font-bold'><Link >log-out</Link></li> :
+                        <>
                         <li className='mr-5 text-black font-bold'><Link to='/login'>login</Link></li>
                         <li className='mr-5 text-black font-bold'><Link to='/register'>Register</Link></li>
+                        </>
+                        }
+                       {user&& user.uid ? <img title={user.displayName} className='h-8 w-8 bg-slate-600 rounded-full' src={user.photoURL} alt=''/> : 'photo'}
                     </ul>
                     <div className="dropdown dropdown-end lg:hidden">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">

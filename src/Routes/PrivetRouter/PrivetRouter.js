@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
-const PrivetRouter = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+const PrivetRouter = ({children}) => {
+    const {user} = useContext(AuthContext)
+    
 };
 
 export default PrivetRouter;
