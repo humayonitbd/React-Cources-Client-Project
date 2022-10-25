@@ -8,6 +8,7 @@ import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
+import PrivetRouter from "../PrivetRouter/PrivetRouter";
 
 const router = createBrowserRouter([
     {path:'/',
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
         {path:'/CorsesData/:id', 
         loader:({params})=> fetch(`http://localhost:5000/data/${params.id}`),
         element:<CoursesDetails></CoursesDetails>},
-        {path:'/checkOutPage/:id', element:<CheckOutPage></CheckOutPage>}
+        {path:'/checkOutPage/:id', element:<PrivetRouter><CheckOutPage></CheckOutPage></PrivetRouter>}
     ]}
 ])
 

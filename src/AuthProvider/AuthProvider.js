@@ -12,18 +12,22 @@ const AuthProvider = ({children}) => {
 
 
     const createUser=(email, password)=>{
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const profileUpdateHandler =(profile)=>{
+        setLoading(true)
         return updateProfile(auth.currentUser, profile)
     }
 
     const signInHandler =(email, password)=>{
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
     const logOutHandler =()=>{
+        setLoading(true)
         return signOut(auth)
     }
 
@@ -40,7 +44,7 @@ const AuthProvider = ({children}) => {
 
 
 
-    const authInfo = {user, createUser, logOutHandler, profileUpdateHandler, signInHandler};
+    const authInfo = {user, loading, createUser, logOutHandler, profileUpdateHandler, signInHandler};
 
     return (
         <div>
