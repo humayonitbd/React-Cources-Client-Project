@@ -1,0 +1,20 @@
+.CoursesLeftSide{
+    width: 20%;
+}
+.CoursesRightSide{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+
+}
+
+@media screen and (max-width: 1020px) {
+    .CoursesLeftSide{
+        width: 100%;
+    }
+    .CoursesRightSide{
+        width: 100%;
+    }
+    
+}
