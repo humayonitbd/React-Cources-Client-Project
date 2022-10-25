@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-import CategoryPage from '../CategoryPage/CategoryPage';
+import { FaBars, FaFacebook } from 'react-icons/fa';
 
 const Header = () => {
     const {user, logOutHandler} = useContext(AuthContext)
@@ -42,8 +42,9 @@ const Header = () => {
                     </ul>
                     <div className="dropdown dropdown-end lg:hidden">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                        <img src="https://placeimg.com/80/80/people" alt=''/>
+                        <div className="text-lg">
+                        <FaBars></FaBars>
+                        
                         </div>
                     </label>
                     <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content  bg-base-100 rounded-box w-52">

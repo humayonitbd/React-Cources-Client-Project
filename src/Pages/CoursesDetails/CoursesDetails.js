@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import { useReactToPrint } from 'react-to-print';
 import './CoursesDetails.css'
 
 const CoursesDetails = () => {
     const coursesDetails = useLoaderData();
     const {title, id, category, name, Details, ourcourses, images, parsent, learn, author, others} = coursesDetails;
     console.log(coursesDetails)
+    const componentRef = useRef();
+    const handlePrint = useReactToPrint({
+        content:()=> componentRef.current,
+        documentTitle: 'emp-data',
+        onAfterPrint: ()=> alert('prient success')
+    })
+
+
+
     return (
-        <div className='CoursesDetails mb-5'>
+        <>
+        <div ref={componentRef} className='CoursesDetails mb-5' style={{width: '100%', height:'auto'}}>
             <div className="card mt-10 card-compact lg:w-8/12 mx-auto bg-base-100 shadow-xl">
-                <h2 className='bg-warning py-4 text-3xl font-bold text-center'>{name} Courses </h2>
+                <div className='flex justify-evenly items-center bg-warning py-4'>
+                <h2 className=' text-3xl font-bold text-center'>{name} Courses </h2>
+                <button onClick={handlePrint} className='btn btn-black text-white'>Download-Pdf</button>
+                </div>
             <figure><img src={images} alt="Shoes" /></figure>
             <div className="card-body">
                 <div className='flex justify-between items-center'>
@@ -55,6 +69,7 @@ const CoursesDetails = () => {
             </div>
             </div>
         </div>
+        </>
     );
 };
 
