@@ -1,13 +1,38 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
+    const {signInHandler} = useContext(AuthContext)
+    const Naviget = useNavigate();
+
     const loginHandler = (e)=>{
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password)
+        logInHandler(email, password)
+        form.reset();
+    }
+
+    const logInHandler =(email, password)=>{
+        signInHandler(email, password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+            toast.success('Login successfull !!!')
+            Naviget('/')
+           
+        })
+        .catch(error =>{
+            console.error(error)
+            if(error.message){
+                toast.error(' Your type do not match!!')
+            }
+            
+        })
     }
 
 
