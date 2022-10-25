@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './CorsesData.css'
 
 const CorsesData = ({category}) => {
-    console.log(category)
+    // console.log(category)
     const {name, images, parsent, price, id} = category;
     return (
         <div className='bg-blue-100'>

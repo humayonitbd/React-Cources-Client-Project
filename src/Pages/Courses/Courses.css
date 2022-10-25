@@ -15,6 +15,18 @@
     }
     .CoursesRightSide{
         width: 100%;
+        
     }
+    
+}
+@media screen and (max-width: 600px) {
+    .CoursesRightSide{
+        grid-template-columns: repeat(1, 1fr);
+        
+    }
+    .CoursesLeftSide{
+        text-align: center;
+    }
+    
     
 }

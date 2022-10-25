@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import CategoryPage from '../CategoryPage/CategoryPage';
 
 const Header = () => {
     const {user, logOutHandler} = useContext(AuthContext)
@@ -52,7 +53,9 @@ const Header = () => {
                         <li><Link to='/blog'>Blog</Link></li>
                         <li><Link to='/login'>login</Link></li>
                         <li><Link to='/register'>Register</Link></li>
+
                     </ul>
+                    
                     </div>
                 </div>
                 </div>
