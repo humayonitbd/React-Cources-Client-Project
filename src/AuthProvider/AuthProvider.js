@@ -7,27 +7,27 @@ export const AuthContext = createContext();
 const auth = getAuth(app)
 
 const AuthProvider = ({children}) => {
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState({})
     const [loading, setLoading] = useState(true);
 
 
     const createUser=(email, password)=>{
-        setLoading(true)
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const profileUpdateHandler =(profile)=>{
-        setLoading(true)
+        setLoading(true);
         return updateProfile(auth.currentUser, profile)
     }
 
     const signInHandler =(email, password)=>{
-        setLoading(true)
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password)
     }
 
     const logOutHandler =()=>{
-        setLoading(true)
+        setLoading(true);
         return signOut(auth)
     }
 
@@ -44,17 +44,17 @@ const AuthProvider = ({children}) => {
     const providerGithub = new GithubAuthProvider();
 
     const googleLogIn=()=>{
-        setLoading(true)
+        setLoading(true);
        return signInWithPopup(auth, providerGoogle)
     }
 
     const handlerGithubLogin=()=>{
-        setLoading(true)
+        setLoading(true);
         return signInWithPopup(auth, providerGithub)
     }
 
     const changePasswordHandler = (email)=>{
-        setLoading(true)
+        setLoading(true);
        return sendPasswordResetEmail(auth, email)
     }
 

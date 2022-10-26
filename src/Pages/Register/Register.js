@@ -1,13 +1,12 @@
 import React, { useContext, useState } from 'react'; 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import './Register.css'
 
 const Register = () => {
     const {createUser, profileUpdateHandler} = useContext(AuthContext)
     const [success, setSuccess] = useState('')
-
-
+   
     const registerHandler = (e)=>{
         e.preventDefault();
         const form = e.target;
@@ -31,6 +30,7 @@ const Register = () => {
             form.reset();
             handlerProfile(name, photoUrl)
             setSuccess('Create your account!!')
+            
         })
         .catch(error =>console.error(error))
     }
