@@ -9,6 +9,7 @@ import logo from './logo.png';
 
 const Header = () => {
     const {user, logOutHandler} = useContext(AuthContext)
+    const [toggle, setToggle] = useState(false);
 
     const handlerLogoutBtn =()=>{
         logOutHandler()
@@ -18,6 +19,11 @@ const Header = () => {
         .catch(error=>console.error(error))
 
     }
+
+    const toggleHandler =()=>{
+        setToggle(!toggle)
+    }
+    
 
     
 
@@ -34,8 +40,11 @@ const Header = () => {
                         <li className='mr-5 text-black font-bold'><Link to='/courses'>Courses</Link></li>
                         <li className='mr-5 text-black font-bold'><Link to='/faq'>FAQ</Link></li>
                         <li className='mr-5 text-black font-bold'><Link to='/blog'>Blog</Link></li>
-                        <input type="checkbox" className="toggle" defaultChecked/>
-                        { user && user.uid ?  <li onClick={handlerLogoutBtn} className='mr-5 text-black font-bold'><Link >log-out</Link></li> :
+                        {/* <input type="checkbox" className="toggle" defaultChecked/> */}
+                        <button onClick={toggleHandler} className={ toggle ? `px-5 rounded bg-black text-white` : `px-5 rounded btn-primary`}>{
+                            toggle ? 'dark' : 'light'
+                        }</button>
+                        { user && user.uid ?  <li onClick={handlerLogoutBtn} className='mr-5 text-white font-bold px-5 mx-2 rounded bg-red-700'><Link >log-out</Link></li> :
                         <>
                         <li className='mr-5 text-black font-bold'><Link to='/login'>login</Link></li>
                         <li className='mr-5 text-black font-bold'><Link to='/register'>Register</Link></li>
