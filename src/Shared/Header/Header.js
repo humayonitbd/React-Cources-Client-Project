@@ -4,6 +4,7 @@ import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { FaBars, FaFacebook } from 'react-icons/fa';
+import logo from './logo.png';
 
 
 const Header = () => {
@@ -24,6 +25,7 @@ const Header = () => {
         <div className='bg-white'>
                 <div className="navbar lg:w-10/12 mx-auto">
                 <div className="flex-1">
+                    <img src={logo} className='w-20' alt="" />
                     <a href='/home' className="text-xl text-black font-bold">Programming Learning</a>
                 </div>
                 <div className="flex-none gap-2">
