@@ -41,7 +41,7 @@ const Header = () => {
                         <li className='mr-5 text-black font-bold'><Link to='/faq'>FAQ</Link></li>
                         <li className='mr-5 text-black font-bold'><Link to='/blog'>Blog</Link></li>
                         {/* <input type="checkbox" className="toggle" defaultChecked/> */}
-                        <button onClick={toggleHandler} className={ toggle ? `px-5 rounded bg-black text-white` : `px-5 rounded btn-primary`}>{
+                        <button onClick={toggleHandler} className={ toggle ? `px-5 mr-2 rounded bg-black text-white` : `px-5 mr-2 rounded btn-primary`}>{
                             toggle ? 'dark' : 'light'
                         }</button>
                         { user && user.uid ?  <li onClick={handlerLogoutBtn} className='mr-5 text-white font-bold px-5 mx-2 rounded bg-red-700'><Link >log-out</Link></li> :

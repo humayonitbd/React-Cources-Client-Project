@@ -5,6 +5,7 @@ import CheckOutPage from "../../Pages/CheckOutPage/CheckOutPage";
 import Courses from "../../Pages/Courses/Courses";
 import CoursesDetails from "../../Pages/CoursesDetails/CoursesDetails";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
+import FaqPage from "../../Pages/FaqPage/FaqPage";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
@@ -28,7 +29,8 @@ const router = createBrowserRouter([
         element:<CoursesDetails></CoursesDetails>},
         {path:'/checkOutPage/:id', 
         loader:({params})=> fetch(`http://localhost:5000/data/${params.id}`),
-        element:<PrivetRouter><CheckOutPage></CheckOutPage></PrivetRouter>}
+        element:<PrivetRouter><CheckOutPage></CheckOutPage></PrivetRouter>},
+        {path:'/faq', element:<FaqPage></FaqPage>}
     ]}
 ])
 

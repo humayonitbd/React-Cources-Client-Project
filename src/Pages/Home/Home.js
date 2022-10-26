@@ -10,9 +10,9 @@ const Home = () => {
                 <img src={homeImage} className='imageHome' alt="homeimg" />
             </div>
         
-                <div className='text-end'>
+                <div className='lg:text-end md:text-end text-center'>
                 <h2 className='text-5xl font-bold mb-7'>Programming Learging</h2>
-                <p className='lg:ml-32 mb-5 text-lg'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident voluptatibus laborum officia omnis velit beatae, eaque, consectetur debitis deleniti odio autem ad, molestias quae alias quaerat excepturi. Sapiente, quisquam qui?</p>
+                <p className='lg:ml-32 mb-5 text-lg'>As many courses as we have on this site, each course is a very important course. You will improve yourself by taking our course.Programmers can remember. Because this post of ours can determine your future life so without delay visit our website and check everything.</p>
                 <Link to='/courses'><button className="btn btn-warning">Start learning</button></Link>
                 </div>
            
