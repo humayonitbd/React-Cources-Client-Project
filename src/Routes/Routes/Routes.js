@@ -26,7 +26,9 @@ const router = createBrowserRouter([
         {path:'/CorsesData/:id', 
         loader:({params})=> fetch(`http://localhost:5000/data/${params.id}`),
         element:<CoursesDetails></CoursesDetails>},
-        {path:'/checkOutPage/:id', element:<PrivetRouter><CheckOutPage></CheckOutPage></PrivetRouter>}
+        {path:'/checkOutPage/:id', 
+        loader:({params})=> fetch(`http://localhost:5000/data/${params.id}`),
+        element:<PrivetRouter><CheckOutPage></CheckOutPage></PrivetRouter>}
     ]}
 ])
 

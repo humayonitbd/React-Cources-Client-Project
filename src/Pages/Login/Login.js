@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
-    const {signInHandler, googleLogIn} = useContext(AuthContext)
+    const {signInHandler, googleLogIn, handlerGithubLogin} = useContext(AuthContext)
     const naviget = useNavigate();
     const location = useLocation();
 
@@ -49,6 +50,15 @@ const Login = () => {
             .catch(error =>console.error(error))
         }
 
+        const githabLogin=()=>{
+            handlerGithubLogin()
+            .then(result =>{
+                naviget(from, {replace: true})
+                toast.success('Login successfull!!')
+            })
+            .catch(error =>console.error(error))
+        }
+
 
 
     return (
@@ -58,7 +68,8 @@ const Login = () => {
                 <div className="text-center">
                 <h1 className="text-5xl font-bold mb-4 lg:mb-10">Login now!</h1>
                 </div>
-                <form onSubmit={loginHandler} className="card flex-shrink-0 max-w-sm shadow-2xl bg-base-100">
+                <div className='shadow-2xl bg-base-100 pb-6'>
+                <form onSubmit={loginHandler} className="card flex-shrink-0 max-w-sm">
                 <div className="card-body">
                     <div className="form-control">
                     <label className="label">
@@ -71,17 +82,24 @@ const Login = () => {
                         <span className="label-text">Password</span>
                     </label>
                     <input type="password" name='password' placeholder="password" className="input input-bordered lg:w-80" />
-                    {/* <label className="label">
-                        <a href="#s" className="label-text-alt link link-hover">Forgot password?</a>
-                    </label> */}
+                   
                     </div>
                     <div className="form-control mt-6">
                     <button type='submit' className="btn btn-primary mb-2">login</button>
-                    <button onClick={handlerGoogleLogin} className="btn btn-primary">Google log-in</button>
+                    {/* <div className='flex justify-evenly'>
+                    <button onClick={handlerGoogleLogin} className="btn btn-outline"><FaGoogle className='text-lg'></FaGoogle> - log-in</button>
+                    <button onClick={githabLogin} className="btn btn-outline"> <FaGithub className='text-lg'></FaGithub> - log-in</button>
+                    </div> */}
                     </div>
-                    <p>Have you any account? <Link className='underline underline-offset-1 text-red-500' to='/register'>register</Link></p>
+                    <p className='text-center'>Have you any account? <Link className='underline  underline-offset-1 text-red-500' to='/register'>register</Link></p>
                 </div>
                 </form>
+                <div className='flex justify-evenly'>
+                    <button onClick={handlerGoogleLogin} className="btn btn-outline"><FaGoogle className='text-lg'></FaGoogle> - log-in</button>
+                    <button onClick={githabLogin} className="btn btn-outline"> <FaGithub className='text-lg'></FaGithub> - log-in</button>
+                </div>
+                
+            </div>
             </div>
             </div>
         </div>

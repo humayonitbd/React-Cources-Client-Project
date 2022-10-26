@@ -8,7 +8,7 @@ const Courses = () => {
     const categorys = useLoaderData();
     // console.log(categorys)
     return (
-        <div className='lg:flex lg:w-10/12 mx-auto mb-5 mt-10'>
+        <div className='lg:flex sm:flex md:w-10/12 lg:w-10/12 mx-auto mb-5 mt-10'>
            
             <div className='CoursesLeftSide'>
                 {
@@ -18,7 +18,7 @@ const Courses = () => {
             
        
 
-            <div className='lg:px-5 CoursesRightSide'>
+            <div className='lg:px-5 md:px-5 sm:px-3 CoursesRightSide'>
             {
                 categorys.map(category => <CorsesData key={category.id} category={category}></CorsesData>)
             }

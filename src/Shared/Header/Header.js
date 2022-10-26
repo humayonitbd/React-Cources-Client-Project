@@ -41,7 +41,7 @@ const Header = () => {
                         <li className='mr-5 text-black font-bold'><Link to='/register'>Register</Link></li>
                         </>
                         }
-                       {user&& user.uid ? <img title={user.displayName} className='h-8 w-8 bg-slate-600 rounded-full' src={user.photoURL} alt=''/> : 'photo'}
+                       {user&& user.uid ? <img title={user.displayName} className='h-8 w-8 bg-slate-600 rounded-full' src={user.photoURL} alt=''/> : 'login'}
                     </ul>
                     <div className="dropdown dropdown-end lg:hidden">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
