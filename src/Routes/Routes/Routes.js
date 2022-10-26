@@ -18,17 +18,17 @@ const router = createBrowserRouter([
         {path:'/', element:<Home></Home>},
         {path:'/home', element:<Home></Home>},
         {path:'/courses', 
-        loader:()=> fetch('http://localhost:5000/data'),
+        loader:()=> fetch('https://assinment-server-10.vercel.app/data'),
         element:<Courses></Courses>
     },
         {path:'/blog', element:<Blog></Blog>},
         {path:'/login', element:<Login></Login>},
         {path:'/register', element:<Register></Register>},
         {path:'/CorsesData/:id', 
-        loader:({params})=> fetch(`http://localhost:5000/data/${params.id}`),
+        loader:({params})=> fetch(`https://assinment-server-10.vercel.app/data/${params.id}`),
         element:<CoursesDetails></CoursesDetails>},
         {path:'/checkOutPage/:id', 
-        loader:({params})=> fetch(`http://localhost:5000/data/${params.id}`),
+        loader:({params})=> fetch(`https://assinment-server-10.vercel.app/data/${params.id}`),
         element:<PrivetRouter><CheckOutPage></CheckOutPage></PrivetRouter>},
         {path:'/faq', element:<FaqPage></FaqPage>}
     ]}
