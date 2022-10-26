@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
-    const {signInHandler, googleLogIn, handlerGithubLogin} = useContext(AuthContext)
+    const {signInHandler, googleLogIn, handlerGithubLogin, changePasswordHandler} = useContext(AuthContext)
+    const [emailValue, setEmailValue] = useState('')
     const naviget = useNavigate();
     const location = useLocation();
 
@@ -59,6 +60,25 @@ const Login = () => {
             .catch(error =>console.error(error))
         }
 
+        const emailValueHandler =(e)=>{
+            const emailFieldValue = e.target.value;
+            setEmailValue(emailFieldValue)
+           
+
+        }
+
+        const passwordChangeHandler =()=>{
+            if(!emailValue){
+                alert('Please type your email!!')
+                return;
+            }
+            changePasswordHandler(emailValue)
+            .then(result=>{
+                alert('Please check your gmail and change password')
+            })
+            .catch(error =>console.error(error))
+
+        }
 
 
     return (
@@ -75,14 +95,16 @@ const Login = () => {
                     <label className="label">
                         <span className="label-text">Email</span>
                     </label>
-                    <input type="email" name='email' placeholder="email" className="input input-bordered lg:w-80" />
+                    <input type="email" onChange={emailValueHandler} name='email' placeholder="email" className="input input-bordered lg:w-80" />
                     </div>
                     <div className="form-control">
                     <label className="label">
                         <span className="label-text">Password</span>
                     </label>
                     <input type="password" name='password' placeholder="password" className="input input-bordered lg:w-80" />
-                   
+                    <label className="label">
+                    <Link onClick={passwordChangeHandler} className="label-text-alt link link-hover">Forgot password?</Link>
+                    </label>
                     </div>
                     <div className="form-control mt-6">
                     <button type='submit' className="btn btn-primary mb-2">login</button>
