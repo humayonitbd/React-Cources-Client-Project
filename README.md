@@ -68,3 +68,28 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+### my website details ###
+
+##### Website Name : Programming Learning 
+
+##### Website live link: ();
+
+##### Details
+1. PROGRAMMING LEARNING I tried to make this website as a very creative website I have a website name first and it is showing in the title.There is a page linked to each option in the header where by clicking you can see the homepage and also by clicking it you can see different types of courses. What courses are available on our website.
+
+2. There are two sections in Karee stage one left site and another right site on category click you can see your related quote details and also click on those you can see your details.Go to the details page and read all about your quotes accordingly
+ get premium access On each there is a button by clicking on which you can buy according to the price.If you want, you can download all the details of our website in PDF format. For this, we have given you a nickname and a button in our top section. If you click on it, all the details will be downloaded in PDF format.
+
+ 3. And then you go to buy our course by reading the details, then there is an excel button called premium, if you click on it below, if you are not logged in to our website, it will take you to the login page because it is locked in private, you cannot buy on our website if you are not logged in.
+
+ 4. If you are new to our website please register by going to our register page and logging in until you are logged in.You can't see that often on any website because our website is completely covered by authorized security..You can't see that often on any website because our website is completely covered by authorized security
+
+ 5. The website is completely unique website. Different types of image icons are used in our website and also our website is responsive.Our website has been helped by tailwind css..Each header section on the page is linked to the page and an optional error page is created..I have tried to make my website very creative and reasonable and the types of objects and various functionality components used in the website have been very reasonable And a page on our website called blog has answers of various questions which you can remember very much.
+
+
+
+

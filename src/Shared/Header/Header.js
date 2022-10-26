@@ -1,9 +1,10 @@
 
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { FaBars, FaFacebook } from 'react-icons/fa';
+
 
 const Header = () => {
     const {user, logOutHandler} = useContext(AuthContext)
@@ -17,7 +18,7 @@ const Header = () => {
 
     }
 
-
+    
 
     return (
         <div className='bg-white'>
@@ -61,6 +62,7 @@ const Header = () => {
                 </div>
                 </div>
         </div>
+      
     );
 };
 
