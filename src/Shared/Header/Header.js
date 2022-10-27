@@ -10,7 +10,7 @@ import logo from './logo.png';
 const Header = () => {
     const {user, logOutHandler} = useContext(AuthContext)
     const [toggle, setToggle] = useState(false);
-
+    //log out function
     const handlerLogoutBtn =()=>{
         logOutHandler()
         .then(result =>{
@@ -60,12 +60,7 @@ const Header = () => {
                         </div>
                     </label>
                     <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content  bg-base-100 rounded-box w-52">
-                        {/* <li><Link to='/home'>Home</Link></li>
-                        <li><Link to='/courses'>Courses</Link></li>
-                        <li><Link to='/faq'>FAQ</Link></li>
-                        <li><Link to='/blog'>Blog</Link></li>
-                        <li><Link to='/login'>login</Link></li>
-                        <li><Link to='/register'>Register</Link></li> */}
+                        
 
                         <li className='mr-5 text-black font-bold'><Link to='/home'>Home</Link></li>
                         <li className='mr-5 text-black font-bold'><Link to='/courses'>Courses</Link></li>

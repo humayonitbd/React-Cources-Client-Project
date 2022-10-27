@@ -39,7 +39,7 @@ const Login = () => {
             
         })
     }
-
+    //google log in
         const handlerGoogleLogin=()=>{
             googleLogIn()
             .then(result =>{
@@ -50,7 +50,7 @@ const Login = () => {
             })
             .catch(error =>console.error(error))
         }
-
+        //github login
         const githabLogin=()=>{
             handlerGithubLogin()
             .then(result =>{
@@ -66,7 +66,7 @@ const Login = () => {
            
 
         }
-
+        //password change function
         const passwordChangeHandler =()=>{
             if(!emailValue){
                 alert('Please type your email!!')

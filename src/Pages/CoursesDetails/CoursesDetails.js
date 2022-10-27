@@ -5,6 +5,7 @@ import './CoursesDetails.css'
 
 const CoursesDetails = () => {
     const coursesDetails = useLoaderData();
+    //object distructure
     const {title, id, category, name, Details, ourcourses, images, parsent, learn, author, others} = coursesDetails;
     console.log(coursesDetails)
     const componentRef = useRef();

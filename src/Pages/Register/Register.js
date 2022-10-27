@@ -22,7 +22,7 @@ const Register = () => {
             alert('Please use of speshall carecter!!')
             return;
         }
-
+        //create user
         createUser(email, password)
         .then(result=>{
             const user = result.user;
@@ -35,7 +35,7 @@ const Register = () => {
         .catch(error =>console.error(error))
     }
 
-
+    //profile update
     const handlerProfile =(name, photoUrl)=>{
         const profile = {
             displayName: name,
