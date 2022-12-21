@@ -2,10 +2,13 @@ import React from 'react';
 import './Home.css'
 import homeImage from './courses-image.jpg'
 import { Link } from 'react-router-dom';
+import HomeSec2 from '../HomeSec2/HomeSec2';
 
 const Home = () => {
     return (
-        <div className='homeContainer w-10/12 mx-auto lg:flex justify-between items-center'>
+        <div>
+            <div>
+            <div className='homeContainer w-10/12 mx-auto lg:flex justify-between items-center'>
             <div>
                 <img src={homeImage} className='imageHome' alt="homeimg" />
             </div>
@@ -16,6 +19,11 @@ const Home = () => {
                 <Link to='/courses'><button className="btn btn-warning">Start learning</button></Link>
                 </div>
            
+            </div>
+            </div>
+            <div>
+                <HomeSec2/>
+            </div>
         </div>
     );
 };
