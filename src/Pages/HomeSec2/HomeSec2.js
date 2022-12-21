@@ -7,19 +7,23 @@ const HomeSec2 = () => {
             id:1,
             name:"Basic learning",
             img:"https://cdn-icons-png.flaticon.com/512/2621/2621040.png",
-            details:"Basic learning needs refer to the knowledge, skills, attitudes and values necessary for people to survive, to improve the quality of their lives, and to continue learning"
+            details:"Basic learning needs refer to the knowledge, skills, attitudes and values necessary for people to survive, to improve the quality of their lives, and to continue learning",
+            link:"/CorsesData/3"
+
         },
         {
             id:2,
             name:"Medium learning",
             img:"https://cdn-icons-png.flaticon.com/512/1005/1005142.png",
-            details:"The Learning Medium refers to which sensory channel is used for learning. The sensory channels include vision, tactile, and auditory and there is usually a primary and secondary medium."
+            details:"The Learning Medium refers to which sensory channel is used for learning. The sensory channels include vision, tactile, and auditory and there is usually a primary and secondary medium.",
+            link:"/CorsesData/4"
         },
         {
             id:3,
             name:"Advanse learning",
             img:"https://cdn-icons-png.flaticon.com/512/2620/2620993.png",
-            details:"Advanced learning' describes the learning of students who learn at a rate that exceeds that of their peers in one or more content areas. The learning of these children also falls outside the need-spectrum of the majority of their peers"
+            details:"Advanced learning' describes the learning of students who learn at a rate that exceeds that of their peers in one or more content areas. The learning of these children also falls outside the need-spectrum of the majority of their peers",
+            link:"/CorsesData/1"
         }
     ]
     return (
