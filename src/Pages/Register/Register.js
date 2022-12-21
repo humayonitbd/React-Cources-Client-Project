@@ -6,7 +6,7 @@ import './Register.css'
 const Register = () => {
     const {createUser, profileUpdateHandler} = useContext(AuthContext)
     const [success, setSuccess] = useState('')
-   
+   const navigate = useNavigate();
     const registerHandler = (e)=>{
         e.preventDefault();
         const form = e.target;
@@ -30,6 +30,7 @@ const Register = () => {
             form.reset();
             handlerProfile(name, photoUrl)
             setSuccess('Create your account!!')
+            navigate('/home');
             
         })
         .catch(error =>console.error(error))
